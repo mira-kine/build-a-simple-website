@@ -1,9 +1,32 @@
-
+import React from 'react';
+import './styles/main.scss';
+import { useState, useEffect } from 'react';
+import 'grapesjs/dist/css/grapes.min.css';
+import grapesjs from 'grapesjs';
+import gjsPresetWebpage from "grapesjs-preset-webpage"
+// grapesJS is an open-source web builder framework 
 
 function App() {
+  const [editor, setEditor] = useState(null);
+
+    // useEffect to build the editor with grapesJS
+  useEffect(() => {
+    const editor = grapesjs.init({
+      container: "#editor",
+      plugins: [gjsPresetWebpage],
+      pluginsOpts: {
+        gjsPresetWebpage: {}
+      }
+    });
+    setEditor(editor);
+  }, []);
+  // Indicate where to init editor
+
+   
+
   return (
     <div className="App">
-      Grapes JS
+      <div id="editor"></div>
     </div>
   );
 }
