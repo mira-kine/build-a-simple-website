@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import grapesjs from "grapesjs";
+import './styles/main.scss';
 
 // grapesJS is an open-source web builder framework 
 
