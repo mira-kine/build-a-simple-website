@@ -1,9 +1,22 @@
+import React, { useState, useEffect } from 'react';
+import grapesjs from "grapesjs";
 
+// grapesJS is an open-source web builder framework 
 
 function App() {
+  const [editor, setEditor] = useState(null);
+
+  // useEffect to build the editor with grapesJS
+  useEffect(() => {
+    const editor = grapesjs.init({
+      container: "#editor",
+    });
+    setEditor(editor);
+  }, []);
+
   return (
     <div className="App">
-      Grapes JS
+      <div id="editor"></div>
     </div>
   );
 }
